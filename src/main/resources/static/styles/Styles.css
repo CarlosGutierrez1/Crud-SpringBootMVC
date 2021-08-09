@@ -1,0 +1,100 @@
+body{
+  background-color: whitesmoke;
+}
+.navbar-fixed{
+  background-color: #503BD9;
+}
+.navbar-fixed a{
+  color: white;
+  opacity: 0.7;
+}
+.navbar-fixed a:hover{
+  opacity: 1;
+}
+.alert-fixed{
+  color: black;
+  font-size: 20px;
+  margin: 0px;
+  margin-top: 50px;
+  padding: 0px;
+  padding-bottom: 0px;
+}
+.contenedor-mostrarusuarios{
+    background-color: #F2F2F2;
+    max-height: 800px;
+    overflow: hidden;
+
+}
+.contenedor-centrado{
+    text-align: center;
+    padding: 50px;
+    padding-bottom: 10px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+}
+.contendor-centrado h4{
+  padding-bottom: 1px;
+}
+.fixed-width{
+  width: 100px;
+  padding: 0px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+.divoptions{
+  background-color: blue;
+  margin-left: auto;
+  margin-right: auto;
+}
+.divoptions input{
+  margin-left: auto;
+  margin-right: auto;
+}
+.text-paddindfixed{
+  padding: 50px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+.text-anadirusuario{
+  color: white;
+
+}
+
+.contendor-anadirusuario{
+  background-color: #383EA6;
+  max-height: 800px;
+
+}
+.contendor-actualizarusuario{
+  background-color: #383EA6;
+  height: 100%;
+}
+.boton-fixed{
+  margin-top: 50px;
+
+}
+
+.input-fixed:focus{
+  border: 3px solid;
+  border-color: #5058F2;
+}
+
+.contenedor-form-anadirusuario{
+  width: 30%;
+
+}
+.hr-anadirusuario{
+  width: 20%;
+  color: white;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0;
+}
+.contenedor-buscarusuario{
+  max-height: 500px;
+
+}

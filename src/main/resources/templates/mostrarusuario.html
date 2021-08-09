@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- META SECTION -->
+    <title>Actualizando usuario</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!--  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>-->
+    <link href="../static/css/bootstrap.css" rel="stylesheet" th:href="@{/css/bootstrap.css}"/>
+    <link href="../static/styles/Styles.css"  th:href="@{/styles/Styles.css}" th:rel="stylesheet"/>
+    <!-- END META SECTION -->
+    <!--  BEGIN STYLE -->
+
+    <!--  END STYLE -->
+
+</head>
+<body style="background-color: #383EA6;">
+
+<nav class="navbar navbar-expand navbar-dark navbar-expand-lg fixed-top navbar-fixed ">
+    <div class="container-fluid">
+        <a class=" font-monospace navbar-brand" href="/#itsbody">Administracionn</a>
+
+        <ul class="navbar-nav justify-content-end ">
+
+            <li class="nav-item">
+                <a class="nav-link font-monospace active"  href="/#mostrarusuarios">Lista de usuarios</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link font-monospace active" href="/#anadirusuario">Añadir usuario</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link font-monospace active" href="/#buscarusuario">buscar usuario</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<br></br><br></br>
+<div class="container-fluid contendor-anadirusuario" style="background-color: whitesmoke;">
+    <div class="contenedor-centrado">
+        <h2 class="font-monospace">Usuarios encontrados:</h2>
+        <br></br>
+    </div>
+    <div class=" contenedor-centrado table-responsive ">
+        <table class="table table-dark table-striped table-hover table-bordered border-white fixed-table overflow-scroll">
+            <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>correo</th>
+                <th>privilegio</th>
+                <th>Opcion 1</th>
+                <th>Opcion 2</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="user : ${usuarioslist}">
+
+                <td th:text="${user.nombre}"></td>
+                <td th:text="${user.apellido}"></td>
+                <td th:text="${user.correo}"></td>
+                <td class="fixed-width" th:text="${user.privilegio}"></td>
+                <form action="/goToactualizar" th:action="@{/goToactualizar}" method="post">
+                    <input type="hidden" th:value="${user.id}" name="id" id="id"></input>
+                    <td class="fixed-width">
+                        <div class=" divoptions "><input type="submit" value="Actualizar" class="btn btn-success"
+                                                         onclick="showDiv()"/></div>
+                    </td>
+                </form>
+                <form action="/eliminaruser" th:action="@{/eliminaruser}" method="post">
+                    <input type="hidden" th:value="${user.id}" name="id2" id="id2"></input>
+                    <td class="fixed-width">
+                        <div class="divoptions "><input type="submit" value="Eliminar" class="btn btn-danger "/></div>
+                    </td>
+                </form>
+
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="contenedor-centrado contenedor-form-anadirusuario" id="buscarusuario">
+    <form method="get" action="/" th:action="@{/}">
+        <div class="mb-3">
+            <input type="submit" value="Volver" class="btn btn-success boton-fixed btn-lg"/>
+        </div>
+    </form>
+    </div>
+</div>
+
+<script href="../static/js/bootstrap.js" th:href="@{/js/bootstrap.js}"></script>
+</body>
+</html>
